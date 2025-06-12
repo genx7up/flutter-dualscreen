@@ -26,7 +26,6 @@ apply plugin: 'kotlin-android'
 
 android {
     namespace 'com.microsoft.device.dualscreen'
-    
     compileSdkVersion 30
 
     sourceSets {
@@ -39,13 +38,19 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
     testOptions {
         unitTests {
             includeAndroidResources = true
         }
-    }
-    kotlinOptions {
-        jvmTarget = "17"
     }
 }
 
